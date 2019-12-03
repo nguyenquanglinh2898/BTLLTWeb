@@ -1,0 +1,40 @@
+.cart input[type=text], textarea{
+    width: 100%;
+    padding: 5px;
+}
+.cart select{
+    width: 49%;
+}
+.order{
+    text-align: center;
+}
+.order-button{
+    width: 100%;
+    background-color: #e23a24;
+    display: block;
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    font-weight: 500;
+    cursor: pointer;
+}
+a.order-button{
+    background-color: #0084cb;
+}
+a.order-button:hover{
+    text-decoration: none;
+    color: #fff;
+}
+.order input[type=number]{
+    text-align: center;
+}
+.instrument-image{
+    float: left;
+}
+button.delete{
+    margin: 5px 0;
+    font-size: 13px;
+}

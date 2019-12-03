@@ -3,7 +3,7 @@
     <header>
         <div class="header-function">
             <div class="brand fl">
-                <img src="image/logo.png" alt="logo.png">
+                <a href="/Project"><img src="image/logo.png" alt="logo.png"></a>
             </div>
             <div class="search-engine fl">
                 <form action="search.jsp" method="GET">

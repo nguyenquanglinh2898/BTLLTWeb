@@ -112,7 +112,7 @@
             <div class="hot-item">
                 <div class="list-item">
                     <div class="row">
-                        <a class="item col-sm-3" href="#">
+                        <a class="item col-sm-3" href="detail.jsp?id=1">
                             <div class="item-image">
                                 <img src="image/dia_chi_ban_dan_piano_dien_dynatone_dpp_510_gia_rex500x500x4.jpg">
                             </div>
