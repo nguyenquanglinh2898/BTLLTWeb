@@ -1,3 +1,5 @@
+<%@page import="model.Item"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -45,6 +47,11 @@
                     <div class="col-sm-8">
                         <div class="order">
                             <h6 class="cl-red">ĐƠN ĐẶT HÀNG</h6>
+                            
+                            <%
+                                List <Item> listItem = (List <Item>)session.getAttribute("listItem");
+                            %>
+                            
                             <table border="2" cellpadding="10px">
                             <tr>
                                 <th>STT</th>
@@ -54,30 +61,37 @@
                                 <th>Chiết khấu</th>
                                 <th>Thành tiền</th>
                             </tr>
+                            <% for( int i = 0 ; i < listItem.size() ; i++ ){    %>
                             <tr>
-                                <td>1</td>
+                                <td><%= listItem.get(i).getId() %></td>
                                 <td>
                                     <div class="instrument-info">
                                         <div class="instrument-image">
-                                            <img src="image/850x850 - Ibanez VC50NJP-NT Acoustic Guitar.jpg" style="width: 78px; height:78px;">
+                                            <img src="<%= listItem.get(i).getImage()%>" style="width: 78px; height:78px;">
                                         </div>
                                         <div class="instrument-name">
-                                            <a href="#">ĐÀN GUITAR ACOUSTIC IBANEZ VC50NJP-NT</a>
+                                            <a href="#"><%= listItem.get(i).getName()%></a>
                                         </div>
                                         <button class="delete">Xóa</button>
                                     </div>
                                 </td>
-                                <td class="cl-red">2.800.000 VND</td>
+                                <td class="cl-red"><%= listItem.get(i).getDotPrice()%> VND</td>
                                 <td><input type="number" value="1" min="1" max="9999"></td>
                                 <td>0%</td>
-                                <td class="cl-red">2.800.000 VND</td>
+                                <td class="cl-red"><%= listItem.get(i).getDotPrice(listItem.get(i).getQuantity()*listItem.get(i).getPrice()) %> VND</td>
                             </tr>
+                            <% } %>
                             </table>
                             <br>
-                            <h6>Tổng tiền thanh toán:&ensp;<span class="cl-red">2.800.000 VND</span></h6>
+                            <% 
+                                int total = 0;
+                                for( Item i : listItem ) 
+                                    total += i.getPrice()*i.getQuantity();
+                            %>
+                            <h6>Tổng tiền thanh toán:&ensp;<span class="cl-red"><%= total %> VND</span></h6>
                             <br>
                             <button type="submit" class="order-button">HOÀN TẤT MUA HÀNG</button>
-                            <a href="/Project" class="order-button">TIẾP TỤC MUA HÀNG</a>
+                            <a href="/BTLLTWeb" class="order-button">TIẾP TỤC MUA HÀNG</a>
                         </div>
                     </div>
                 </div>

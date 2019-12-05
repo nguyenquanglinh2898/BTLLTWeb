@@ -3,7 +3,7 @@
     <header>
         <div class="header-function">
             <div class="brand fl">
-                <a href="/Project"><img src="image/logo.png" alt="logo.png"></a>
+                <a href="/BTLLTWeb"><img src="image/logo.png" alt="logo.png"></a>
             </div>
             <div class="search-engine fl">
                 <form action="search.jsp" method="GET">
@@ -15,6 +15,7 @@
             </div>
             <div class="notice-box fr">
                 <ul>
+                    <li><a href="addInstrument">Add Instrument</a></li>
                     <li><a href="#"><i class="fa fa-user icon"></i><p>Đăng nhập</p></a></li>
                     <li><a href="#"><i class="fa fa-user-plus icon"></i><p>Đăng ký</p></a></li>
                     <li><a href="#"><i class="fa fa-shopping-cart icon"><span>0</span></i><p>Giỏ hàng</p></a></li>
@@ -50,7 +51,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="guitar.jsp">
+                    <a href="guitar">
                         <img src="image/guitar-icon-tygy.png">
                         <p>GUITAR</p>
                     </a>

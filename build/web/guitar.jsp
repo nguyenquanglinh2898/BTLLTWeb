@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -112,13 +113,17 @@
             <div class="hot-item">
                 <div class="list-item">
                     <div class="row">
-                        <a class="item col-sm-3" href="detail.jsp?id=1">
-                            <div class="item-image">
-                                <img src="image/dia_chi_ban_dan_piano_dien_dynatone_dpp_510_gia_rex500x500x4.jpg">
-                            </div>
-                            <p class="item-header">Đàn Piano Điện Dynatone DPP510 (Chính Hãng Full Box 100%)</p>
-                            <p class="item-price">12.500.000 VND</p>
-                        </a>
+                        <c:forEach var="item" items="${list}">
+                            <a class="item col-sm-3" href="detail?id=${item.id}&instru_type=${item.instru_type}">
+                                <div class="item-image">
+                                    <img src="${item.image}">
+                                </div>
+                                <p class="item-header">${item.name}</p>
+                                <p class="item-price">${item.getDotPrice()} VND</p>
+                            </a>
+                            <a href="edit?id=${item.id}&instru_type=${item.instru_type}">Edit</a>
+                            <a href="delete?id=${item.id}&instru_type=${item.instru_type}">Delete</a>
+                        </c:forEach>
                     </div>
                 </div>
             </div>
