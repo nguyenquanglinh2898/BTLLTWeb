@@ -11,14 +11,14 @@
     <body>
         <%@include file="header.jsp" %>
         
-        <div class="signin container">
+        <div class="signup container">
             <form method="POST">
                 Username: <input type="text" name="username">                               <br><br>
                 Password: <input type="text" name="password">                               <br><br>
-                <input type="submit" name="submit" value="Sign in">                         <br><br>
+                <input type="submit" name="submit" value="Sign up">                         <br><br>
             </form>
-        </div>          
-        <div>${mess}</div>
+            <div>${mess}</div>
+        </div>  
         <%@include file="footer.jsp" %> 
     </body>
 </html>

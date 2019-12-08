@@ -57,6 +57,7 @@ header{
 .notice-box ul{
     margin: 0;
     padding: 0;
+    position: relative;
 }
 .notice-box li{
     float: left;
@@ -78,7 +79,6 @@ header{
 }
 .notice-box li:first-child{
     margin-top: 11px;
-    width: 120px;
     background-color: #eee;
 }
 .notice-box li:last-child{
@@ -90,6 +90,12 @@ header{
 .notice-box li:last-child p{
     color: red;
     font-weight: bold;
+}
+.notice-box .signout{
+    position: absolute;
+    left: 0;
+    top: 60px;
+    background-color: #eee;
 }
 .fa-shopping-cart{
     position: relative;
@@ -167,6 +173,8 @@ header{
     position: relative;
     background-color: #fff;
     border: 5px solid #f0f0f0;
+    display: block;
+    padding: 16px;
 }
 .item:hover{
     text-decoration: none;
@@ -190,7 +198,7 @@ header{
     text-align: center;
 }
 .item-image img{
-    width: 235px;
+    width: 100%;
     height: 235px;
 }
 .item-header{

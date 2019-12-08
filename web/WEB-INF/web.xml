@@ -24,6 +24,34 @@
         <servlet-name>DeleteController</servlet-name>
         <servlet-class>controller.DeleteController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SigninController</servlet-name>
+        <servlet-class>controller.SigninController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>MainController</servlet-name>
+        <servlet-class>controller.MainController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteItemController</servlet-name>
+        <servlet-class>controller.DeleteItemController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>QuantityController</servlet-name>
+        <servlet-class>controller.QuantityController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignupController</servlet-name>
+        <servlet-class>controller.SignupController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignoutController</servlet-name>
+        <servlet-class>controller.SignoutController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>BillController</servlet-name>
+        <servlet-class>controller.BillController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>GuitarController</servlet-name>
         <url-pattern>/guitar</url-pattern>
@@ -47,6 +75,34 @@
     <servlet-mapping>
         <servlet-name>DeleteController</servlet-name>
         <url-pattern>/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SigninController</servlet-name>
+        <url-pattern>/signin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>MainController</servlet-name>
+        <url-pattern>/BTLLTWeb</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteItemController</servlet-name>
+        <url-pattern>/deleteItem</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuantityController</servlet-name>
+        <url-pattern>/quantity</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignupController</servlet-name>
+        <url-pattern>/signup</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignoutController</servlet-name>
+        <url-pattern>/signout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BillController</servlet-name>
+        <url-pattern>/bill</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

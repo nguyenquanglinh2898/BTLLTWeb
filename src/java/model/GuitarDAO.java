@@ -17,4 +17,5 @@ public interface GuitarDAO {
     void edit( int id, Guitar g );
     void delete( int id );
     Guitar search( int id );
+    List <Guitar> getFilterGuitar();
 }

@@ -154,6 +154,40 @@ public class GuitarDAOImpl implements GuitarDAO{
         return g;
     }
     
+    public List<Guitar> getFilterGuitar() {
+        List <Guitar> listGuitar = new ArrayList<>();
+        try {
+            ConnectionPool pool = ConnectionPool.getInstance();
+            Connection conn = pool.getConnection();
+            
+            PreparedStatement p = conn.prepareStatement("SELECT * "
+                                                      + "FROM guitar "
+                                                      + "WHERE price >= ?"
+                                                      + "AND price <= ?");
+            p.setInt(1, 4000000);
+            p.setInt(2, 6000000);
+            
+            ResultSet res = p.executeQuery();
+            
+            while(res.next()){
+                int id = res.getInt("id");
+                String name = res.getString("name");
+                String instru_type = res.getString("instru_type");
+                String type = res.getString("type");
+                int price = res.getInt("price");
+                String image = res.getString("image");
+                listGuitar.add(new Guitar(id, price, name, instru_type, type, image));
+            }
+            
+            closeResultSet(res);
+            closePreparedStatement(p);
+            pool.freeConnection(conn);
+        } catch (SQLException ex) {
+            Logger.getLogger(GuitarDAOImpl.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return listGuitar;
+    } 
+    
     public void closeStament( Statement s ){
         try{
             if (s != null)

@@ -20,7 +20,6 @@
                     Price: <input type="text" name="price" value="${g.price}" disabled>                         <br><br>
                     Image: <input type="text" name="image" value="${g.image}" disabled>                         <br><br>
                 </div>
-                
                 <input type="submit" name="submit" value="Delete">
             </form>                                                                 <br>
             <div class="success">${mess}</div>

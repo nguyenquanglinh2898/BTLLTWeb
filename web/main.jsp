@@ -18,14 +18,23 @@
                 </div>
                 <div class="list-item">
                     <div class="row">
-                        <a class="item col-sm-3" href="#">
-                            <div class="hot-tag">HOT</div>
-                            <div class="item-image">
-                                <img src="image/dia_chi_ban_dan_piano_dien_dynatone_dpp_510_gia_rex500x500x4.jpg">
-                            </div>
-                            <p class="item-header">Đàn Piano Điện Dynatone DPP510 (Chính Hãng Full Box 100%)</p>
-                            <p class="item-price">12.500.000 VND</p>
-                        </a>
+                        <div class="col-sm-3">
+                            <a class="item" href="#">
+                                <div class="hot-tag">HOT</div>
+                                <div class="item-image">
+                                    <img src="image/dia_chi_ban_dan_piano_dien_dynatone_dpp_510_gia_rex500x500x4.jpg">
+                                </div>
+                                <p class="item-header">Đàn Piano Điện Dynatone DPP510 (Chính Hãng Full Box 100%)</p>
+                                <p class="item-price">12.500.000 VND</p>
+                            </a>
+                            <c:set var="role" value="admin"></c:set>
+                            <c:choose>
+                                <c:when test="${user.role eq role}">
+                                    <a href="edit?id=${item.id}&instru_type=${item.instru_type}">Edit</a>
+                                    <a href="delete?id=${item.id}&instru_type=${item.instru_type}">Delete</a>
+                                </c:when>
+                            </c:choose>
+                        </div>
                     </div>
                 </div>
             </div>

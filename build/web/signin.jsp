@@ -12,13 +12,13 @@
         <%@include file="header.jsp" %>
         
         <div class="signin container">
-            <form action="/BTLLTWeb" method="GET">
-                Username: <input type="text" name="username">
-                Password: <input type="text" name="password">
-                <input type="submit" name="submit" value="Sign in">
+            <form method="POST">
+                Username: <input type="text" name="username">                               <br><br>
+                Password: <input type="text" name="password">                               <br><br>
+                <input type="submit" name="submit" value="Sign in">                         <br><br>
             </form>
         </div>          
-        
+        <div>${mess}</div>
         <%@include file="footer.jsp" %> 
     </body>
 </html>

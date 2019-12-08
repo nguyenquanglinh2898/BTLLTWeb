@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
     <header>
@@ -15,10 +16,26 @@
             </div>
             <div class="notice-box fr">
                 <ul>
-                    <li><a href="addInstrument">Add Instrument</a></li>
-                    <li><a href="#"><i class="fa fa-user icon"></i><p>Đăng nhập</p></a></li>
-                    <li><a href="#"><i class="fa fa-user-plus icon"></i><p>Đăng ký</p></a></li>
-                    <li><a href="#"><i class="fa fa-shopping-cart icon"><span>0</span></i><p>Giỏ hàng</p></a></li>
+                    <c:set var="role" value="admin"></c:set>
+                    <c:choose>
+                        <c:when test="${user.role eq role}">
+                            <li><a href="addInstrument">Add Instrument</a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li></li>
+                        </c:otherwise>
+                    </c:choose>
+                    <c:choose>
+                        <c:when test="${user eq null}">
+                            <li><a href="signin"><i class="fa fa-user icon"></i><p>Đăng nhập</p></a></li>
+                        </c:when>
+                        <c:otherwise>
+                            <li><a href="signout" class="signout">Sign Out</a></li>
+                            <li><a href="#"><i class="fa fa-user icon"></i><p>${user.username}</p></a></li>
+                        </c:otherwise> 
+                    </c:choose>
+                    <li><a href="signup"><i class="fa fa-user-plus icon"></i><p>Đăng ký</p></a></li>
+                    <li><a href="cart"><i class="fa fa-shopping-cart icon"><span>${listItem.getAllItem().size()}</span></i><p>Giỏ hàng</p></a></li>
                     <li>
                         <a>
                             <i class="fa fa-phone icon"></i>

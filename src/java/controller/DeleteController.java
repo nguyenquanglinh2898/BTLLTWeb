@@ -12,9 +12,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import model.Guitar;
 import model.GuitarDAO;
 import model.GuitarDAOImpl;
+import model.Item;
+import model.ItemDAOImpl;
 
 /**
  *
@@ -43,8 +46,10 @@ public class DeleteController extends HttpServlet {
         int id = Integer.parseInt(request.getParameter("id"));
         String instru_type = request.getParameter("instru_type");
         
-        GuitarDAO listGuitar = new GuitarDAOImpl();
-        listGuitar.delete(id);
+        if( instru_type.compareTo("guitar") == 0 ){
+            GuitarDAO listGuitar = new GuitarDAOImpl();
+            listGuitar.delete(id);
+        }
         
         request.setAttribute("mess", "Xóa thành công");
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/delete.jsp");

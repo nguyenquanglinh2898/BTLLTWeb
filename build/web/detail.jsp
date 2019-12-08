@@ -24,13 +24,13 @@
                     <input type="text" name="instru_type" class="hidden" value="${g.instru_type}">
                     <input type="text" name="price" class="hidden" value="${g.price}">
                     <input type="text" name="image" class="hidden" value="${g.image}">
-                    <h5>${g.name} (<span>Còn hàng</span>)</h5>
+                    <h5>${g.name}</h5>
                     <h5 class="cl-red">Giá bán: ${g.getDotPrice()} VND</h5>
                     <h6 class="cl-red2">Thông tin chi tiết</h6>
                     <div class="info">
                         <p><b>Xuất xứ:</b> Japan</p>
                         <p><b>Kiểu dáng:</b> O</p>
-                        <p><b>Kiểu sơn:</b> Sơn Bóng/p>
+                        <p><b>Kiểu sơn:</b> Sơn Bóng</p>
                         <p><b>Mặt đàn:</b>  Gỗ Cẩm Lai (Rosewood)</p>
                         <p><b>Lưng & Hông:</b> Gỗ gụ (Mahogany)</p>
                         <p><b>Đầu đàn & Cần:</b> Gỗ gụ (Mahogany)</p>

@@ -114,15 +114,22 @@
                 <div class="list-item">
                     <div class="row">
                         <c:forEach var="item" items="${list}">
-                            <a class="item col-sm-3" href="detail?id=${item.id}&instru_type=${item.instru_type}">
-                                <div class="item-image">
-                                    <img src="${item.image}">
-                                </div>
-                                <p class="item-header">${item.name}</p>
-                                <p class="item-price">${item.getDotPrice()} VND</p>
-                            </a>
-                            <a href="edit?id=${item.id}&instru_type=${item.instru_type}">Edit</a>
-                            <a href="delete?id=${item.id}&instru_type=${item.instru_type}">Delete</a>
+                            <div class="col-sm-3">
+                                <a class="item" href="detail?id=${item.id}&instru_type=${item.instru_type}">
+                                    <div class="item-image">
+                                        <img src="${item.image}">
+                                    </div>
+                                    <p class="item-header">${item.name}</p>
+                                    <p class="item-price">${item.getDotPrice()} VND</p>
+                                </a>
+                                <c:set var="role" value="admin"></c:set>
+                                <c:choose>
+                                    <c:when test="${user.role eq role}">
+                                        <a href="edit?id=${item.id}&instru_type=${item.instru_type}">Edit</a>
+                                        <a href="delete?id=${item.id}&instru_type=${item.instru_type}">Delete</a>
+                                    </c:when>
+                                </c:choose>
+                            </div>
                         </c:forEach>
                     </div>
                 </div>

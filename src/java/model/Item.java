@@ -10,28 +10,19 @@ package model;
  * @author nguye
  */
 public class Item {
-    private int id, idInstru, price, quantity;
+    private int idInstru, price, quantity;
     private String name, instru_type, image;
 
     public Item() {
     }
 
-    public Item(int id, int idInstru, String name, int price, int quantity, String instru_type, String image) {
-        this.id = id;
+    public Item(int idInstru, String name, int price, int quantity, String instru_type, String image) {
         this.idInstru = idInstru;
         this.price = price;
         this.quantity = quantity;
         this.name = name;
         this.instru_type = instru_type;
         this.image = image;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public int getIdInstru() {
@@ -81,22 +72,6 @@ public class Item {
     public void setImage(String image) {
         this.image = image;
     }
-
-    public String getDotPrice(){
-        int t = 0;
-        String priceRev = "";
-        String pricee = String.valueOf(this.price);
-        for( int i = pricee.length()-1 ; i >= 0 ; i-- ){
-            t++ ;
-            priceRev += pricee.charAt(i);
-            if( t%3 == 0 ) priceRev += ".";
-        }
-        String price = "";
-        for( int i = 0 ; i < priceRev.length() ; i++ )
-            price += priceRev.charAt(priceRev.length()-i-1);
-        
-        return price;
-    }
     
     public String getDotPrice( int p ){
         int t = 0;
@@ -113,11 +88,10 @@ public class Item {
         
         return price;
     }
-    
+
     @Override
     public String toString() {
-        return "Item{" + "id=" + id + ", idInstru=" + idInstru + ", price=" + price + ", quantity=" + quantity + ", name=" + name + ", instru_type=" + instru_type + ", image=" + image + '}';
+        return "Item{" + "idInstru=" + idInstru + ", price=" + price + ", quantity=" + quantity + ", name=" + name + ", instru_type=" + instru_type + ", image=" + image + '}';
     }
-    
     
 }

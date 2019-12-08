@@ -1,4 +1,4 @@
-.cart input[type=text], textarea{
+.customer-info input[type=text], textarea{
     width: 100%;
     padding: 5px;
 }
@@ -34,7 +34,34 @@ a.order-button:hover{
 .instrument-image{
     float: left;
 }
-button.delete{
+.delete{
     margin: 5px 0;
-    font-size: 13px;
+    font-size: 12px;
+    display: inline-block;
+    color: #fff;
+    border-radius: 10px;
+    background-color: #e23a24;
+    width: 20%;
+}
+.order-table .second-col{
+    width: 30%;
+}
+.order-table .quantity-col{
+    width: 15%;
+}
+.order-table .quantity-button{
+    display: inline-block;
+    width: 25%;
+    color: #fff;
+    background-color: gray;
+    border-radius: 6px;
+}
+.order-table .quantity{
+    width: 30%;
+    text-align: center;
+    background-color: #fff;
+    border: none;
+}
+.order-table a:hover{
+    text-decoration: none;
 }

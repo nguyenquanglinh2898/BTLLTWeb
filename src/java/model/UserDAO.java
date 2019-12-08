@@ -11,11 +11,8 @@ import java.util.List;
  *
  * @author nguye
  */
-public interface ItemDAO {
-    List <Item> getAllItem();
-    void add( Item i );
-    void delete( int i );
-    void editQuantity( int i, String type );
-    int search( int idInstru, String instru_type );
-    int getTotalPrice();
+public interface UserDAO {
+    List <User> getAllUser();
+    User search( String username );
+    void add( User u );
 }
